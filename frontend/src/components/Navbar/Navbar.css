@@ -37,3 +37,23 @@
 .navbar button:hover {
     background-color: #fff4f2;
 }
+
+.active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+.navbar li{
+    cursor: pointer;
+}
+.Navbar-search-icon{
+    position: relative;
+}
+.Navbar-search-icon .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
