@@ -1,7 +1,8 @@
 import './Home.css'
 import Header from './../../components/Header/Header';
-import ExploreMenu from './../../components/ExploreMenu/ExploreMenu';
 import { useState } from 'react';
+import ExploreMenu from './../../components/ExploreMenu/ExploreMenu';
+
 const Home = () => {
     const [category, setCategory] = useState("All")
     return (
