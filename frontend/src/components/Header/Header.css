@@ -1,0 +1,45 @@
+.header {
+    height:40vw;
+    margin: 25px auto;
+    background: url('background.png') no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1vw;
+    max-width: 50%;
+    bottom: 5%;
+    left: 5vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw, 22px);
+}
+
+.header-contents p{
+    color: white;
+    font-size: 1vw;
+}
+
+.header-contents button{
+    border: none;
+    color: #747474;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw,10px);
+    border-radius: 40px;
+}
+.explore-menu hr{
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #e2e2e2;
+    border: none;
+}
