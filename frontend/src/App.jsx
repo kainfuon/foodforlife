@@ -4,7 +4,7 @@ import StoreContextProvider from './context/StoreContext'; // Import Provider
 import Cart from './pages/Cart/Cart';
 import Home from './pages/Home/Home';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
-
+import Footer from './components/Footer/Footer';
 const App = () => {
   return (
     <StoreContextProvider>
@@ -16,6 +16,7 @@ const App = () => {
           <Route path="/orders" element={<PlaceOrder />} />
         </Routes>
       </div>
+      <Footer></Footer>
     </StoreContextProvider>
   );
 };
