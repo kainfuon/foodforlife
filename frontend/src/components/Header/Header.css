@@ -1,5 +1,5 @@
 .header {
-    height:40vw;
+    height: 40vw;
     margin: 25px auto;
     background: url('background.png') no-repeat;
     background-size: contain;
@@ -24,22 +24,43 @@
     font-size: max(4.5vw, 22px);
 }
 
-.header-contents p{
+.header-contents p {
     color: white;
     font-size: 1vw;
 }
 
-.header-contents button{
+.header-contents button {
     border: none;
     color: #747474;
     padding: 1vw 2.3vw;
     background-color: white;
-    font-size: max(1vw,10px);
+    font-size: max(1vw, 10px);
     border-radius: 40px;
 }
-.explore-menu hr{
+
+.explore-menu hr {
     margin: 10px 0px;
     height: 2px;
     background-color: #e2e2e2;
     border: none;
+}
+
+@media(max-width:1050px) {
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media(max-width:750px) {
+    .header-contents {
+        max-width: 65%;
+    }
+
+    .header-contents p {
+        display: none;
+    }
+
+    .header-contents button {
+        padding: 2vw 4vw
+    }
 }

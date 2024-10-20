@@ -42,13 +42,16 @@
     padding-bottom: 2px;
     border-bottom: 2px solid #49557e;
 }
-.navbar li{
+
+.navbar li {
     cursor: pointer;
 }
-.Navbar-search-icon{
+
+.Navbar-search-icon {
     position: relative;
 }
-.Navbar-search-icon .dot{
+
+.Navbar-search-icon .dot {
     position: absolute;
     min-width: 10px;
     min-height: 10px;
@@ -56,4 +59,35 @@
     border-radius: 5px;
     top: -8px;
     right: -8px;
+}
+
+@media(max-width:900px) {
+    .navbar.logo {
+        width: 120px;
+    }
+
+    .navbar-menu {
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .navbar-right {
+        gap: 20px;
+    }
+
+    .navbar-right img {
+        width: 20px;
+    }
+
+    .navbar-right button {
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+
+@media(max-width:750px) {
+
+    .navbar-menu {
+        display: none;
+    }
 }
