@@ -5,8 +5,12 @@ const Footer = () => {
         <div className='footer' id='footer'>
             <div className="footer-content">
                 <div className="footer-content-left">
-                    <img id='i' src={assets.ac} alt="" />
-                    <p>Righit sth right here</p>
+                    <img src="/down.png" alt="AC Image" />
+                    <p>
+                        At <strong>Food For Live</strong>, your health and satisfaction come first.
+                        Our meals are crafted to balance flavor and nutrition, helping you enjoy meaningful moments around the table.
+                        <em>Order today and taste the difference!</em>
+                    </p>
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt="" />
                         <img src={assets.twitter_icon} alt="" />
@@ -33,7 +37,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr />
-            <p className="footer-copyright">Right sth right here</p>
+            <p className="footer-copyright">© 2024 Food For Live. All rights reserved.</p>
         </div>
     )
 }
