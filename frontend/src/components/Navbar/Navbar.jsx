@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { assets } from '../../assets/assets.js'
 import './Navbar.css'
-const Navbar = ({setShowLogin}) => {
+import PropTypes from 'prop-types'
+const Navbar = ({ setShowLogin }) => {
     const [menu, setMenu] = useState("home")
     return (
         <div className='navbar'>
@@ -19,10 +20,12 @@ const Navbar = ({setShowLogin}) => {
                     <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link>
                     <div className="dot"></div>
                 </div>
-                <button onClick={()=>setShowLogin(true)}>sign in</button>
+                <button onClick={() => setShowLogin(true)}>sign in</button>
             </div>
         </div>
     )
 }
-
+Navbar.propTypes = {
+    setShowLogin: PropTypes.func.isRequired
+};
 export default Navbar
