@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='footer' id='footer'>
             <div className="footer-content">
                 <div className="footer-content-left">
-                    <img src="/down.png" alt="AC Image" />
+                    <img src="/Itsuki.png" alt="AC Image" />
                     <p>
                         At <strong>Food For Live</strong>, your health and satisfaction come first.
                         Our meals are crafted to balance flavor and nutrition, helping you enjoy meaningful moments around the table.
