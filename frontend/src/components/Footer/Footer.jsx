@@ -28,7 +28,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="footer-content-right">
-                    <h2>GET TIN TOUCH</h2>
+                    <h2>GET IN TOUCH</h2>
                     <ul>
                         <li>+84-123-567-89</li>
                         <li>contact@.com</li>
