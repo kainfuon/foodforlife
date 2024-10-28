@@ -9,7 +9,6 @@ const addFood = async (req, res) => {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        category: req.body.category,
         image: image_filename
     })
 
@@ -21,6 +20,7 @@ const addFood = async (req, res) => {
         res.json({success: false, message: "Add error"})
     }
 }
+
 
 // get food list
 const listFood = async (req, res) => {
@@ -47,3 +47,4 @@ const removeFood = async (req, res) => {
 }
 
 export {addFood, listFood, removeFood} 
+
