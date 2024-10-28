@@ -10,12 +10,12 @@ import { useState } from 'react';
 
 const App = () => {
 
-  const [showLogin,setShowLogin] = useState(true)
+  const [showLogin, setShowLogin] = useState(true)
 
 
   return (
     <StoreContextProvider>
-      {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className="app">
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
