@@ -8,16 +8,20 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await userModel.findOne({ email });
+        //console.log(user);
         if (!user) {
+           // console.log(user);
             return res.status(404).json({ success: false, message: "User not found" }); 
         }
-
+        console.log(user.password);
         const isMatch = await bcrypt.compare(password, user.password); 
         if (!isMatch) {
+            
             return res.status(400).json({ success: false, message: "Invalid password" }); 
         }
         
-        const token = generateToken(user._id);
+        //const token = generateToken(user._id);
+        const token = 1;
         res.status(200).json({ success: true, message: "Login successful", user, token }); 
     } catch (error) {
         console.log(error);
@@ -33,7 +37,7 @@ const generateToken = (id) => {
 const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
     try {
-        const existingEmail = await userModel.findOne({ email }).select("+password");
+        const existingEmail = await userModel.findOne({ email });
         if (existingEmail) return res.status(400).json({ success: false, message: "Email already exists" }); 
         
         if (!validator.isEmail(email)) return res.status(400).json({ success: false, message: "Invalid email" }); 
@@ -51,7 +55,9 @@ const registerUser = async (req, res) => {
         });
 
         const savedUser = await newUser.save();
-        const token = generateToken(savedUser._id);
+        console.log(savedUser);
+        //const token = generateToken(savedUser._id);
+        const token = 1;
         
         res.status(201).json({ success: true, message: "User registered successfully", savedUser, token }); 
     } catch (error) {
