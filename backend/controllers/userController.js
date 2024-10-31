@@ -13,15 +13,15 @@ const loginUser = async (req, res) => {
            // console.log(user);
             return res.status(404).json({ success: false, message: "User not found" }); 
         }
-        console.log(user.password);
+        //console.log(user.password);
         const isMatch = await bcrypt.compare(password, user.password); 
         if (!isMatch) {
             
             return res.status(400).json({ success: false, message: "Invalid password" }); 
         }
-        
-        //const token = generateToken(user._id);
-        const token = 1;
+        //console.log(user._id);
+        const token = generateToken(user._id);
+        //const token = 1;
         res.status(200).json({ success: true, message: "Login successful", user, token }); 
     } catch (error) {
         console.log(error);
@@ -30,7 +30,8 @@ const loginUser = async (req, res) => {
 };
 
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    //return 1;
+    return jwt.sign({ id }, process.env.JWT_SECRET);
 };
 
 // Register
@@ -56,8 +57,8 @@ const registerUser = async (req, res) => {
 
         const savedUser = await newUser.save();
         console.log(savedUser);
-        //const token = generateToken(savedUser._id);
-        const token = 1;
+        const token = generateToken(savedUser._id);
+        
         
         res.status(201).json({ success: true, message: "User registered successfully", savedUser, token }); 
     } catch (error) {
