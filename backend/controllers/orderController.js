@@ -56,4 +56,53 @@ const placeOrder = async (req, res) => {
     }
 }
 
-export {placeOrder}
+const verifyOrder = async (req, res) => {
+    const {orderId, success} = req.body;
+    try {
+        if (success == "true") {
+            await orderModel.findByIdAndUpdate(orderId, {payment:true});
+            res.json({success:true, message:"paid"})
+        } else {
+            await orderModel.findByIdAndUpdate(orderId);
+            res.json({uccess:true, message:"Not paid"})
+        }
+    } catch (error) {
+        console.log(error);
+        res.json({uccess:false, message:"Paid failed"})
+    }
+}
+
+// user order 
+const userOrders = async (req, res) => {
+    try {
+        const orders = await orderModel.find({userId:req.body.userId})
+        res.json({success:true, data:orders})
+    } catch (error) {
+        console.log(error);
+        res.json({success:false, message:"user order error"})
+    }
+}
+
+// list orders for admin panel
+const listOrders = async (req, res) => {
+    try {
+        const orders = await orderModel.find({});
+        res.json({success:true, data:orders})
+    } catch (error) {
+        console.log(error);
+        res.json({success:false, message:"list order fail"})
+    }
+}
+
+// update order status
+const updateStatus = async (req, res) => {
+    try {
+        await orderModel.findByIdAndUpdate(req.body.orderId, {status:req.body.status});
+        res.json({success:true, message: "status updated"})
+    } catch (error) {
+        console.log(error);
+        res.json({success:false, message: "update status fail"})
+    }
+}
+
+export {placeOrder, verifyOrder, userOrders, listOrders, updateStatus}
