@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="footer-content-left">
                     <img src="/Itsuki.png" alt="AC Image" />
                     <p>
-                        At <strong>Food For Live</strong>, your health and satisfaction come first.
+                        At <strong>Food For Life</strong>, your health and satisfaction come first.
                         Our meals are crafted to balance flavor and nutrition, helping you enjoy meaningful moments around the table.
                         <em>Order today and taste the difference!</em>
                     </p>
@@ -37,7 +37,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr />
-            <p className="footer-copyright">© 2024 Food For Live. All rights reserved.</p>
+            <p className="footer-copyright">© 2024 Food For Life. All rights reserved.</p>
         </div>
     )
 }
