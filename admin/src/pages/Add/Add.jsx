@@ -5,8 +5,8 @@ import { useState } from 'react'
 import axios from "axios"
 import { toast } from 'react-toastify'
 
-const Add = () => {
-const url = "http://localhost:4000";
+const Add = ({url}) => {
+
 const[image,setImage] =useState(false);
 const [data,setData] =useState({
   name:"",
@@ -39,10 +39,9 @@ const onSubmitHandler = async (event) => {
     setImage(false)
     toast.success(response.data.message)
   
-
   }
   else {
-
+    toast.error(response.data.message)
   }
 
 }
@@ -62,7 +61,7 @@ const onSubmitHandler = async (event) => {
         </div>
         <div className="add-product-description flex-col">
           <p>Product description</p>
-          <textarea onChange={onChangeHandler} value={data.descripttion} name="description" rows="6" placeholder='Write content here' required></textarea>
+          <textarea onChange={onChangeHandler} value={data.description} name="description" rows="6" placeholder='Write content here' required></textarea>
         </div>
         <div className="add-category-price">
           <div className="add-category flex-col">
