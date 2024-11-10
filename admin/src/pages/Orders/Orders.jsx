@@ -16,9 +16,9 @@ else{
   toast.error("Error")
 }
 }
-const statusHandler = async (event,orderID) => {
+const statusHandler = async (event,orderId) => {
 const response = await axios.post(url+"/api/order/status",{
-  orderID,
+  orderId,
   status:event.target.value
 })
 if(response.data.success) {
@@ -52,7 +52,7 @@ useEffect(()=>{
              <p className="order-item-name">{order.address.firstName+" "+order.address.lastName}</p>
              <div className="order-item-address">
               <p>{order.address.street+" ,"}</p>
-              <p>{order.address.city+", "+order.address.state+", "+order.address.country+", "+order.address.zip}</p>
+              <p>{order.address.city+", "+order.address.state+", "+order.address.country+", "+order.address.zipcode}</p>
              </div>
              <p className='order-item-phone'>{order.address.phone}</p>
             </div>
