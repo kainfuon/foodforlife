@@ -4,7 +4,7 @@ import { StoreContext } from './../../context/StoreContext';
 import './Cart.css';
 const Cart = () => {
 
-    const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext)
+    const { cartItems, food_list, removeFromCart, getTotalCartAmount, getTotalCaloAmount, url } = useContext(StoreContext)
     const navigate = useNavigate();
     return (
         <div className='cart'>
@@ -13,6 +13,7 @@ const Cart = () => {
                     <p>Items</p>
                     <p>Title</p>
                     <p>Price</p>
+                    <p>Calo</p>
                     <p>Quantity</p>
                     <p>Total</p>
                     <p>Remove</p>
@@ -27,6 +28,7 @@ const Cart = () => {
                                     <img src={url+"/images/"+item.image} alt="" />
                                     <p>{item.name}</p>
                                     <p>${item.price}</p>
+                                    <p>{item.calo}</p>
                                     <p>{cartItems[item._id]}</p>
                                     <p>${item.price * cartItems[item._id]}</p>
                                     <p onClick={() => removeFromCart(item._id)} className='cross'>x</p>
@@ -42,6 +44,11 @@ const Cart = () => {
                 <div className="cart-total">
                     <h2>Cart Totals</h2>
                     <div>
+                        <div className="cart-total-details">
+                            <p>Calo total</p>
+                            <p>{getTotalCaloAmount()}</p>
+                        </div>
+                        <hr />
                         <div className="cart-total-details">
                             <p>Subtotal</p>
                             <p>${getTotalCartAmount()}</p>

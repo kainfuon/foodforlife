@@ -11,21 +11,21 @@ const loginUser = async (req, res) => {
         //console.log(user);
         if (!user) {
            // console.log(user);
-            return res.status(404).json({ success: false, message: "User not found" }); 
+            return res.json({ success: false, message: "User not found" }); 
         }
         //console.log(user.password);
         const isMatch = await bcrypt.compare(password, user.password); 
         if (!isMatch) {
             
-            return res.status(400).json({ success: false, message: "Invalid password" }); 
+            return res.json({ success: false, message: "Invalid password" }); 
         }
         //console.log(user._id);
         const token = generateToken(user._id);
         //const token = 1;
-        res.status(200).json({ success: true, message: "Login successful", user, token }); 
+        res.json({ success: true, message: "Login successful", user, token }); 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ success: false, message: "Internal server error" }); 
+        res.json({ success: false, message: "Internal server error" }); 
     }
 };
 
@@ -39,11 +39,11 @@ const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
     try {
         const existingEmail = await userModel.findOne({ email });
-        if (existingEmail) return res.status(400).json({ success: false, message: "Email already exists" }); 
+        if (existingEmail) return res.json({ success: false, message: "Email already exists" }); 
         
-        if (!validator.isEmail(email)) return res.status(400).json({ success: false, message: "Invalid email" }); 
+        if (!validator.isEmail(email)) return res.json({ success: false, message: "Invalid email" }); 
         
-        if (password.length < 8) return res.status(400).json({ success: false, message: "Password must be at least 8 characters long" }); 
+        if (password.length < 8) return res.json({ success: false, message: "Password must be at least 8 characters long" }); 
         
         // Hashing password
         const salt = await bcrypt.genSalt(10); 
@@ -60,10 +60,10 @@ const registerUser = async (req, res) => {
         const token = generateToken(savedUser._id);
         
         
-        res.status(201).json({ success: true, message: "User registered successfully", savedUser, token }); 
+        res.json({ success: true, message: "User registered successfully", savedUser, token }); 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ success: false, message: "Internal server error" }); 
+        res.json({ success: false, message: "Internal server error" }); 
     }
 };
 

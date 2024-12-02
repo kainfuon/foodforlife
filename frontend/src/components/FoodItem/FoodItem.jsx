@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 import './FooddItem.css'
 import { StoreContext } from '../../context/StoreContext'
 
-const FoodItem = ({ id, name, price, description, image }) => {
+const FoodItem = ({ id, name, price, calo, description, image }) => {
 
     const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
 
@@ -28,7 +28,10 @@ const FoodItem = ({ id, name, price, description, image }) => {
                     <img src={assets.rating_starts} alt="" />
                 </div>
                 <p className="food-item-desc">{description}</p>
-                <p className="food-item-price">${price}</p>
+                <div className="food-item-details">
+                    <p className="food-item-price">${price}</p>
+                    <p className="food-item-calo">{calo}</p>
+                </div>
             </div>
         </div>
     )
@@ -38,6 +41,7 @@ FoodItem.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    calo: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
 };

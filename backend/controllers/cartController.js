@@ -17,10 +17,10 @@ const addItemToCart = async (req, res) => {
         // console.log(userData);
         //console.log(cartData);
         await userModel.findByIdAndUpdate(req.body.userId, { cartData });
-        res.status(200).json({success: true, message: "Item added to cart"});
+        res.json({success: true, message: "Item added to cart"});
     } catch (error) {
         console.log(error);
-        res.status(500).json({success: false, message: "Internal server error"});
+        res.json({success: false, message: "Internal server error"});
     }
 }
 
@@ -38,10 +38,10 @@ const removeItemFromCart = async (req, res) => {
         //const itemID = req.body.itemId;
         //console.log( itemID);
         await userModel.findByIdAndUpdate(req.body.userId, {cartData});
-        res.status(200).json({success: true, message: "Item removed from cart"});
+        res.json({success: true, message: "Item removed from cart"});
     } catch (error) {
         console.log(error);
-        res.status(500).json({success: false, message: "Internal server error"});
+        res.json({success: false, message: "Internal server error"});
     }
 }
 
@@ -50,10 +50,10 @@ const getCartItems = async (req, res) => {
     try {
         let userData = await userModel.findById(req.body.userId);
         let cartData = await userData.cartData;
-        res.status(200).json({success: true, cartData});
+        res.json({success: true, cartData});
     } catch (error) {
         console.log(error);
-        res.status(500).json({success: false, message: "Internal server error"});
+        res.json({success: false, message: "Internal server error"});
     }
 }
 

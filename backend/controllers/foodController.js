@@ -9,6 +9,7 @@ const addFood = async (req, res) => {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
+        calo: req.body.calo,
         category: req.body.category,
         image: image_filename
     })
