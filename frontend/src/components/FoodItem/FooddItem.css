@@ -42,10 +42,23 @@
     font-size: 12px;
 }
 
+.food-item-details {
+    display: grid;
+    grid-template-columns: auto auto; /* Creates two columns */
+    gap: 10px; /* Space between the elements */
+}
+
 .food-item-price {
     color: tomato;
     font-weight: 500;
     margin: 10px 0px;
+}
+
+.food-item-calo {
+    color: tomato;
+    font-weight: 500;
+    margin: 10px 0px;
+    text-align: right;
 }
 
 .food-item-img-container {

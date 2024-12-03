@@ -46,7 +46,7 @@ const Cart = () => {
                     <div>
                         <div className="cart-total-details">
                             <p>Calo total</p>
-                            <p>{getTotalCaloAmount()}</p>
+                            <p>{getTotalCaloAmount()} calo</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
