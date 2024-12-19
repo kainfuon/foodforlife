@@ -37,6 +37,6 @@ Website "Food for Life" là một website chuyên cung cấp các món ăn ngon,
 - **Quản Lý Nhân Viên:** 
   - Quản lý thông tin của nhân viên.
 
-## Link báo cáo THPTPM: https://drive.google.com/file/d/1qgaRkjBBPiCDkpwFOdt1yfp9evUSeYhf/view?usp=sharing
+## Link báo cáo THPTPM: https://drive.google.com/file/d/16Dhm02L21gHO1rhyc9lkxn928mEWFGj4/view?usp=sharing
 
 
